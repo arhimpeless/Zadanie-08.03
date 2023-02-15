@@ -28,42 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddTable = new System.Windows.Forms.Button();
+            this.btnDeleteTable = new System.Windows.Forms.Button();
+            this.btnTurnRight = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnTurnLeft = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAddTable
             // 
-            this.button1.Location = new System.Drawing.Point(196, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddTable.Location = new System.Drawing.Point(158, 384);
+            this.btnAddTable.Name = "btnAddTable";
+            this.btnAddTable.Size = new System.Drawing.Size(113, 23);
+            this.btnAddTable.TabIndex = 0;
+            this.btnAddTable.Text = "Добавить стол";
+            this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
-            // button2
+            // btnDeleteTable
             // 
-            this.button2.Location = new System.Drawing.Point(196, 431);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Location = new System.Drawing.Point(158, 431);
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.Size = new System.Drawing.Size(113, 23);
+            this.btnDeleteTable.TabIndex = 1;
+            this.btnDeleteTable.Text = "Удалить стол";
+            this.btnDeleteTable.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
-            // button3
+            // btnTurnRight
             // 
-            this.button3.Location = new System.Drawing.Point(295, 384);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTurnRight.Location = new System.Drawing.Point(295, 384);
+            this.btnTurnRight.Name = "btnTurnRight";
+            this.btnTurnRight.Size = new System.Drawing.Size(129, 23);
+            this.btnTurnRight.TabIndex = 2;
+            this.btnTurnRight.Text = "Повернуть вправо";
+            this.btnTurnRight.UseVisualStyleBackColor = true;
+            this.btnTurnRight.Click += new System.EventHandler(this.btnTurnRight_Click);
             // 
             // listBox1
             // 
@@ -74,18 +76,19 @@
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button4
+            // btnTurnLeft
             // 
-            this.button4.Location = new System.Drawing.Point(295, 431);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTurnLeft.Location = new System.Drawing.Point(295, 431);
+            this.btnTurnLeft.Name = "btnTurnLeft";
+            this.btnTurnLeft.Size = new System.Drawing.Size(129, 23);
+            this.btnTurnLeft.TabIndex = 4;
+            this.btnTurnLeft.Text = "Повернуть влево";
+            this.btnTurnLeft.UseVisualStyleBackColor = true;
+            this.btnTurnLeft.Click += new System.EventHandler(this.btnTurnLeft_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(394, 384);
+            this.button5.Location = new System.Drawing.Point(449, 384);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 5;
@@ -94,7 +97,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(394, 431);
+            this.button6.Location = new System.Drawing.Point(449, 431);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 6;
@@ -108,24 +111,25 @@
             this.ClientSize = new System.Drawing.Size(665, 496);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnTurnLeft);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTurnRight);
+            this.Controls.Add(this.btnDeleteTable);
+            this.Controls.Add(this.btnAddTable);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAddTable;
+        private System.Windows.Forms.Button btnDeleteTable;
+        private System.Windows.Forms.Button btnTurnRight;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTurnLeft;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
     }

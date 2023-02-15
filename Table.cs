@@ -14,16 +14,12 @@ namespace Задание_08._03
         public int Height;
         public int Angle = 0;
         Point LeftBottom;
-        Point TopLeft;
-        Point TopRight;
-        Point RightBottom;
-        Point BottomBottom;
 
         public Table(Point leftBottom)
         {
             const int MaxSquare = 6;
             LeftBottom = leftBottom;
-            Height = Random.Next(2,4);
+            Height = Random.Next(2, 4);
             Width = MaxSquare / Height;
         }
         public Point GetLeftBottom()
@@ -33,22 +29,22 @@ namespace Задание_08._03
         public Point GetRightBottom()
         {
             Point point = new Point();
-            point.X = (int)Math.Round(LeftBottom.X + Width * Math.Cos(180 * Angle / Math.PI));
-            point.Y = (int)Math.Round(LeftBottom.Y + Width * Math.Sin(180 * Angle / Math.PI));
+            point.X = (int)Math.Round(LeftBottom.X + Width * Math.Cos(Angle * Math.PI / 180));
+            point.Y = (int)Math.Round(LeftBottom.Y + Width * Math.Sin(Angle * Math.PI / 180));
             return point;
         }
         public Point GetTopLeft()
         {
             Point point = new Point();
-            point.X = (int)Math.Round(LeftBottom.X - Height * Math.Sin(180 * Angle / Math.PI));
-            point.Y = (int)Math.Round(LeftBottom.Y + Height * Math.Cos(180 * Angle / Math.PI));
+            point.X = (int)Math.Round(LeftBottom.X - Height * Math.Sin(Angle * Math.PI / 180));
+            point.Y = (int)Math.Round(LeftBottom.Y + Height * Math.Cos(Angle * Math.PI / 180));
             return point;
         }
         public Point GetTopRight()
         {
             Point point = new Point();
-            point.X = (int)Math.Round(LeftBottom.X + Width * Math.Cos(180 * Angle / Math.PI) - Height * Math.Sin(180 * Angle / Math.PI));
-            point.Y = (int)Math.Round(LeftBottom.Y + Width * Math.Sin(180 * Angle / Math.PI) + Height * Math.Cos(180 * Angle / Math.PI));
+            point.X = (int)Math.Round(LeftBottom.X + Width * Math.Cos(Angle * Math.PI / 180) - Height * Math.Sin(Angle * Math.PI / 180));
+            point.Y = (int)Math.Round(LeftBottom.Y + Width * Math.Sin(Angle * Math.PI / 180) + Height * Math.Cos(Angle * Math.PI / 180));
             return point;
         }
         public void TurnLeft()
@@ -83,7 +79,7 @@ namespace Задание_08._03
 
         static ListTables()
         {
-            int tableCount = Random.Next(MinTableCount, MaxTableCount +1);
+            int tableCount = Random.Next(MinTableCount, MaxTableCount + 1);
             for (int i = 0; i < tableCount; i++)
             {
                 Tables.Add(new Table(new Point(leftBottomX, 0)));
